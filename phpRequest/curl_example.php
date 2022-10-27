@@ -1,9 +1,9 @@
 <?php
 
-CONST URL = "http://localhost/sql";
+CONST URL = "http://localhost/test";
 CONST POST_VALUES = [
-	"Semih" => "adam",
-	"SA" => "as"
+	"key1" => "value1",
+	"key2" => "value2"
 ];
 $POST_VALUE = json_encode(POST_VALUES);
 
@@ -18,7 +18,6 @@ curl_setopt_array($ch, [
 ]);
 
 $result = curl_exec($ch);
-
 curl_close($ch);
 
 if(is_bool($result) and !$result) throw new Exception(URL." Response is failed.");
